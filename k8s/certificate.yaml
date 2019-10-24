@@ -7,14 +7,14 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: fibkubcalc.tk
+  commonName: fibkubcalc.ml
   dnsNames:
-    - fibkubcalc.tk
-    - www.fibkubcalc.tk
+    - fibkubcalc.ml
+    - www.fibkubcalc.ml
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - fibkubcalc.tk
-          - www.fibkubcalc.tk
+          - fibkubcalc.ml
+          - www.fibkubcalc.ml
