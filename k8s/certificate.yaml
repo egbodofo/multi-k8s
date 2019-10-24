@@ -1,9 +1,9 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: fibkubcalc-tk-tls
+  name: fibkubcalc-tls
 spec:
-  secretName: fibkubcalc-tk
+  secretName: fibkubcalc
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
