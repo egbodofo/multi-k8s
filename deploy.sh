@@ -1,20 +1,20 @@
-# docker build -t egbodofo/multi-client:latest -t egbodofo/multi-client:$SHA -f ./client/Dockerfile ./client
-# docker build -t egbodofo/multi-server:latest -t egbodofo/multi-server:$SHA -f ./server/Dockerfile ./server
-# docker build -t egbodofo/multi-worker:latest -t egbodofo/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t egbodofo/multi-client:latest -t egbodofo/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t egbodofo/multi-server:latest -t egbodofo/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t egbodofo/multi-worker:latest -t egbodofo/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
-# docker push egbodofo/multi-client:latest
-# docker push egbodofo/multi-server:latest
-# docker push egbodofo/multi-worker:latest
+docker push egbodofo/multi-client:latest
+docker push egbodofo/multi-server:latest
+docker push egbodofo/multi-worker:latest
 
-# docker push egbodofo/multi-client:$SHA
-# docker push egbodofo/multi-server:$SHA
-# docker push egbodofo/multi-worker:$SHA
+docker push egbodofo/multi-client:$SHA
+docker push egbodofo/multi-server:$SHA
+docker push egbodofo/multi-worker:$SHA
 
-kubectl delete -f k8s
+kubectl apply -f k8s
 
-# kubectl set image deployments/server-deployment server=egbodofo/multi-server:$SHA
-# kubectl set image deployments/client-deployment client=egbodofo/multi-client:$SHA
-# kubectl set image deployments/worker-deployment worker=egbodofo/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=egbodofo/multi-server:$SHA
+kubectl set image deployments/client-deployment client=egbodofo/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=egbodofo/multi-worker:$SHA
 
 
 # Other Userful Commands
